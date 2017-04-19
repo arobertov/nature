@@ -53,7 +53,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * @param $author
+     * @param $authorId
      * @Route("/article/author_preview/{authorId}", name="author_preview")
      *
      * @return \Symfony\Component\HttpFoundation\Response

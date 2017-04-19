@@ -39,36 +39,9 @@
             <a href="{{ path('homepage') }}"><img src="{{ asset('images/logo.jpg') }}" title="" /></a>
         </div>
         <!---start-top-nav---->
-        <div class="top-menu">
-            <div class="search">
-                <form>
-                    <input type="text" placeholder="" required="">
-                    <input type="submit" value=""/>
-                </form>
-            </div>
-            <span class="menu"> </span>
-            <ul>
-                <li class="active"><a href="{{ path('homepage') }}">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <li><a href="{{ path('fos_user_profile_show') }}"> {{ 'layout.logged_in_as'|
-                            trans({'%username%': app.user.username}, 'FOSUserBundle') }}</a> </li>
-                    <li><a href="{{ path('article_create') }}">CREATE ARTICLE</a> </li>
-                    <li><a href="{{ path('fos_user_security_logout') }}">LOGOUT</a> </li>
-                {% else %}
-                    <li><a href="{{ path('fos_user_security_login') }}">LOGIN</a> </li>
-                {% endif %}
-                <div class="clearfix"> </div>
-            </ul>
-        </div>
-        <div class="clearfix"></div>
-        <script>
-            $("span.menu").click(function(){
-                $(".top-menu ul").slideToggle("slow" , function(){
-                });
-            });
-        </script>
+        {% block topnav %}
+            {% include 'topnav.html.twig' %}
+        {% endblock %}
         <!---//End-top-nav---->
     </div>
 </div>
@@ -85,46 +58,9 @@
 
                 </div>
             </div>
-            <div class="col-md-4 content-right">
-                <div class="recent">
-                    <h3>RECENT POSTS</h3>
-                    <ul>
-                        <li><a href="#">Aliquam tincidunt mauris</a></li>
-                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-                        <li><a href="#">Nunc dignissim risus consecu</a></li>
-                        <li><a href="#">Cras ornare tristiqu</a></li>
-                    </ul>
-                </div>
-                <div class="comments">
-                    <h3>RECENT COMMENTS</h3>
-                    <ul>
-                        <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
-                        <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
-                        <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
-                    </ul>
-                </div>
-                <div class="clearfix"></div>
-                <div class="archives">
-                    <h3>ARCHIVES</h3>
-                    <ul>
-                        <li><a href="#">October 2013</a></li>
-                        <li><a href="#">September 2013</a></li>
-                        <li><a href="#">August 2013</a></li>
-                        <li><a href="#">July 2013</a></li>
-                    </ul>
-                </div>
-                <div class="categories">
-                    <h3>CATEGORIES</h3>
-                    <ul>
-                        <li><a href="#">Vivamus vestibulum nulla</a></li>
-                        <li><a href="#">Integer vitae libero ac risus e</a></li>
-                        <li><a href="#">Vestibulum commo</a></li>
-                        <li><a href="#">Cras iaculis ultricies</a></li>
-                    </ul>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
+            {% block sidebar %}
+            {% include 'sidebar.html.twig' %}
+            {% endblock %}
         </div>
     </div>
 </div>
