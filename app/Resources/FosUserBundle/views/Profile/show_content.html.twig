@@ -1,0 +1,18 @@
+
+<ul class="comment-list">
+    <h5 class="post-author_head">You profile :<a href="#" title="Edit profile" rel="author"></a></h5>
+    <li><img src="{{ asset('images/avatar.png') }}" class="img-responsive" alt="">
+        <div class="clear-fix">
+            <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}:
+            <a href="{{ path('fos_user_profile_edit') }}" title="Edit profile">{{ user.username }}</a> </p>
+        </div>
+        <div class="clear-fix">
+            <p> {{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}:
+                <a href="{{ path('fos_user_profile_edit') }}" title="Edit profile" rel="author"> {{ user.email }}</a></p>
+        </div>
+        <div class="modal-dialog">
+            <p><a href="{{ path('fos_user_profile_edit') }}">Edit you profile.|</a>
+                <a href="{{ path('fos_user_change_password') }}">Change password.</a></p>
+        </div>
+    </li>
+</ul>

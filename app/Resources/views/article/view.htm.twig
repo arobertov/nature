@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    {% for flash_message in app.session.flashBag.get('notice') %}
+        <div class="alert alert-success">
+            <strong>Success!</strong> {{ flash_message }}
+        </div>
+    {% endfor %}
+
+    <div class="single-grid">
+        <img src="{{ asset('images/post1.jpg') }}" alt=""/>
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.content }}</p>
+    </div>
+    {% if app.getUser() and (app.getUser().isAuthor(article) or app.getUser().isAdmin())  %}
+    <div class="well">
+        <fieldset>
+            <legend class="post-author_head">Action</legend>
+            <div class="btn-group" role="group" aria-label="Action">
+                <a type="button" class="btn btn-default" href="{{ path('homepage') }}">
+                    <span class="glyphicon glyphicon-backward" aria-hidden="true"></span> Back
+                </a>
+                <a type="button" class="btn btn-success" href="{{ path('article_edit',{id:article.id}) }}">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
+                </a>
+                <a type="button" class="btn btn-danger" href="{{ path('article_delete',{id:article.id}) }}">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete
+                </a>
+            </div>
+        </fieldset>
+    </div>
+    {% else %}
+        <a type="button" class="btn btn-default" href="{{ path('homepage') }}">
+            <span class="glyphicon glyphicon-backward" aria-hidden="true"></span> Back
+        </a>
+    {% endif %}
+    <ul class="comment-list">
+        <h5 class="post-author_head">Written by <a href="{{ path('fos_user_profile_show') }}" title="Posts by admin" rel="author">{{ article.author }}</a></h5>
+        <li><img src="{{ asset('images/avatar.png') }}" class="img-responsive" alt="">
+            <div class="desc">
+                <p>View all posts by: <a href="{{ path('author_preview',{'authorId':article.authorId}) }}" title="Posts by admin" rel="author">{{ article.author }}</a></p>
+            </div>
+        </li>
+    </ul>
+    <div class="content-form">
+        <h3>Leave a comment</h3>
+        <form>
+            <input type="text" placeholder="Name" required/>
+            <input type="text" placeholder="Email" required/>
+            <input type="text" placeholder="Phone" required/>
+            <textarea placeholder="Message"></textarea>
+            <input type="submit" value="SEND"/>
+        </form>
+    </div>
+{% endblock %}
+
