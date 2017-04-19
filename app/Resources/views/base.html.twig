@@ -58,8 +58,15 @@
 
                 </div>
             </div>
+
             {% block sidebar %}
-            {% include 'sidebar.html.twig' %}
+                <div id="sidebar">
+                {{ render(controller(
+                'AppBundle:Article:recentArticles',
+                { 'max': 3 }
+                )) }}
+                </div>
+
             {% endblock %}
         </div>
     </div>

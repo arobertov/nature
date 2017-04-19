@@ -14,9 +14,9 @@ class DefaultController extends Controller
      *
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction($max=4)
     {
-        $articles = $this->getDoctrine()->getRepository(Article::class)->findAll();
+        $articles = $this->getDoctrine()->getRepository(Article::class)->findBy([],['id'=>'DESC'],$max);
 
         return $this->render('default/index.html.twig', ['articles' => $articles]);
     }

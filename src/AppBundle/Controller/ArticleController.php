@@ -13,6 +13,19 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ArticleController extends Controller
 {
+
+    public function recentArticlesAction($max = 3)
+    {
+        // make a database call or other logic
+        // to get the "$max" most recent articles
+        $articles = $this->getDoctrine()->getRepository(Article::class)->findBy([],['id'=>'DESC'],$max);
+
+        return $this->render(
+            'sidebar.html.twig',
+            array('articles' => $articles)
+        );
+    }
+
     /**
      * @param Request $request
      * @Security("is_granted('IS_AUTHENTICATED_REMEMBERED')")

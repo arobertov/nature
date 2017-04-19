@@ -2,7 +2,9 @@
     <div class="recent">
         <h3>RECENT POSTS</h3>
         <ul>
-            <li><a href="#">SSSSSSSSSSSS</a> </li>
+            {% for article in articles %}
+            <li><a href="{{ path('article_view', {'id': article.id}) }}">{{ article.title }}</a> </li>
+            {% endfor %}
         </ul>
     </div>
     <div class="comments">
