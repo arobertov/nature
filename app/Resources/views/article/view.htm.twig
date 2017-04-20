@@ -35,24 +35,11 @@
             <span class="glyphicon glyphicon-backward" aria-hidden="true"></span> Back
         </a>
     {% endif %}
-    <ul class="comment-list">
-        <h5 class="post-author_head">Written by <a href="{{ path('fos_user_profile_show') }}" title="Posts by admin" rel="author">{{ article.author }}</a></h5>
-        <li><img src="{{ asset('images/avatar.png') }}" class="img-responsive" alt="">
-            <div class="desc">
-                <p>View all posts by: <a href="{{ path('author_preview',{'authorId':article.authorId}) }}" title="Posts by admin" rel="author">{{ article.author }}</a></p>
-            </div>
-        </li>
-    </ul>
-    <div class="content-form">
-        <h3>Leave a comment</h3>
-        <form>
-            <input type="text" placeholder="Name" required/>
-            <input type="text" placeholder="Email" required/>
-            <input type="text" placeholder="Phone" required/>
-            <textarea placeholder="Message"></textarea>
-            <input type="submit" value="SEND"/>
-        </form>
-    </div>
+
+    {% block comment %}
+    {% include 'article/comment.html.twig' %}
+    {% endblock %}
+
 {% endblock %}
 
 
