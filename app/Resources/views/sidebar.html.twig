@@ -10,9 +10,9 @@
     <div class="comments">
         <h3>RECENT COMMENTS</h3>
         <ul>
-            <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
-            <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
-            <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+            {% block recent_comments %}
+                {{ render(controller('AppBundle:Comment:recentComment')) }}
+            {% endblock %}
         </ul>
     </div>
     <div class="clearfix"></div>

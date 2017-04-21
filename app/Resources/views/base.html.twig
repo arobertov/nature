@@ -55,18 +55,10 @@
                     {% block content %}
                     {% endblock %}
                     {% endblock %}
-
                 </div>
             </div>
-
             {% block sidebar %}
-                <div id="sidebar">
-                {{ render(controller(
-                'AppBundle:Article:recentArticles',
-                { 'max': 3 }
-                )) }}
-                </div>
-
+                {{ render(controller('AppBundle:Article:recentArticles',{ 'max': 3 })) }}
             {% endblock %}
         </div>
     </div>

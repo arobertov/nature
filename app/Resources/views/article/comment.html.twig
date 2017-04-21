@@ -16,7 +16,7 @@
             {% if app.getUser() and (app.getUser().isAuthorComment(comment) or app.getUser().isAdmin())  %}
             <h5 class="post-author_head">
                 <a href="{{ path('edit_comment',{'id':comment.id,'articleId':comment.articleId}) }}"> edit </a><span>|</span>
-              <a href="#"> delete </a>
+              <a href="{{ path('delete_comment',{'id':comment.id,'articleId':comment.articleId}) }}"> delete </a>
             </h5>
             {% endif %}
         </div>

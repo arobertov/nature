@@ -17,10 +17,7 @@ class ArticleController extends Controller
     {
         $articles = $this->getDoctrine()->getRepository(Article::class)->findBy([],['id'=>'DESC'],$max);
 
-        return $this->render(
-            'sidebar.html.twig',
-            array('articles' => $articles)
-        );
+        return $this->render('sidebar.html.twig', array('articles' => $articles));
     }
 
     /**
@@ -141,15 +138,23 @@ class ArticleController extends Controller
         {
             return $this->redirectToRoute("homepage");
         }
+        $currentUser = $this->getUser();
+
+        if (!$currentUser->isAuthor($article)&&!$currentUser->isAdmin())
+        {
+            return $this->redirectToRoute("homepage");
+        }
         $form= $this->createForm(new ArticleType(),$article);
 
         $form->handleRequest($request);
+
 
         if ($form->isSubmitted() && $form->isValid())
         {
             $em = $this->getDoctrine()->getManager();
             $em->remove($article);
             $em->flush();
+
 
             return $this->redirectToRoute("homepage");
         }

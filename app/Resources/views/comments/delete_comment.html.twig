@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="well">
+        <form class="form-horizontal" action="{{ path('delete_comment',{'id':id,'articleId':articleId}) }}" method="POST">
+            <fieldset>
+                <legend>Delete Comment</legend>
+
+                <div class="form-group">
+                    {{ form_widget(form.body) }}
+                </div>
+                {{ form_row(form._token) }}
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        {{ form_widget(form.submit,{'label':'Delete comment','attr':{'class':'btn btn-danger'}}) }}
+                        <a class="btn btn-default" href="{{ path('article_view',{'id':articleId}) }}">Cancel</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}
