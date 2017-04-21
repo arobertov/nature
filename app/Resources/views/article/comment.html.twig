@@ -1,15 +1,37 @@
-<ul class="comment-list">
+ {% if comments is empty %}
+ <ul class="comment-list">
+        <li>
+            <div class="desc">
+                <p>No comments here ! By fist to commented this !</p>
+            </div>
+        </li>
+ </ul>
+    {% else %}
     {% for comment in comments %}
-    <h5 class="post-author_head">Commented by : <a href="#" title="Posts by admin" rel="author"> {{ comment.author }} </a></h5>
+ <ul class="comment-list">
+        <div class="col-sm-9">
+             <h5 class="post-author_head">Commented by : <a href="#" title="Posts by admin" rel="author"> {{ comment.author }} </a></h5>
+        </div>
+        <div class="col-sm-3">
+            {% if app.getUser() and (app.getUser().isAuthorComment(comment) or app.getUser().isAdmin())  %}
+            <h5 class="post-author_head">
+                <a href="{{ path('edit_comment',{'id':comment.id,'articleId':comment.articleId}) }}"> edit </a><span>|</span>
+              <a href="#"> delete </a>
+            </h5>
+            {% endif %}
+        </div>
     <p class="time">{{ comment.createdAt|date("d/m/Y H:i") }}</p>
     <li>
         <div class="desc">
             <p>{{ comment.body }}</p>
         </div>
         <div class="desc">
-            <p>View all comments by: <a href="#" title="Comment" rel="author">{{ comment.author }}</a></p>
+            <p>
+                View all comments by: <a href="#" title="Comment" rel="author">{{ comment.author }}</a>
+            </p>
         </div>
-        <hr />
     </li>
+ </ul>
     {% endfor %}
-</ul>
+    {% endif %}
+

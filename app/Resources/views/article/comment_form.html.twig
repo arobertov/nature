@@ -1,11 +1,19 @@
-<div class="content-form">
-    <h3>Leave a comment</h3>
-    <form action="{{ path('article_view',{id:id}) }}" method="post">
+
+<div class="well">
+    <form action="{{ path('create_comment',{id:id}) }}" method="post">
         <fieldset>
-            <legend>New Comment</legend>
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            {{ form_end(form) }}
+            <legend>Leave a comment</legend>
+            <div class="form-group">
+                   {{ form_widget(form.body) }}
+            </div>
+            {{ form_row(form._token) }}
+            <div class="form-group">
+                <div class="col-sm-4 col-sm-offset-4">
+                    {{ form_widget(form.submit) }}
+                </div>
+            </div>
+
         </fieldset>
     </form>
+
 </div>

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="well">
+    <form class="form-horizontal" action="{{ path('edit_comment',{'id':id,'articleId':articleId}) }}" method="POST">
+        <fieldset>
+            <legend>Edit Comment</legend>
+
+            <div class="form-group">
+                {{ form_widget(form.body) }}
+            </div>
+                {{ form_row(form._token) }}
+            <div class="form-group">
+                <div class="col-sm-4 col-sm-offset-4">
+            {{ form_widget(form.submit,{'label':'Edit comment'}) }}
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
+

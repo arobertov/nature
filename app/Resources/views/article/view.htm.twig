@@ -37,8 +37,8 @@
     {% endif %}
 
     {% block comment %}
+        {{ render(controller('AppBundle:Comment:renderForm',{'id':article.id})) }}
         {{ render(controller('AppBundle:Comment:viewComment',{'id':article.id})) }}
-        {{ render(controller('AppBundle:Comment:createComment',{'id':article.id})) }}
 {% endblock %}
 {% endblock %}
 

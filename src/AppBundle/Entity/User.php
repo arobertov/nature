@@ -57,6 +57,14 @@ class User extends BaseUser
     }
 
     /**
+     * @param Comment $comment
+     * @return bool
+     */
+    public function isAuthorComment(Comment $comment)
+    {
+       return $comment->getAuthor()== $this->getUsername();
+    }
+    /**
      * @return bool
      */
     public function isAdmin()

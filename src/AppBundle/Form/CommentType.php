@@ -14,9 +14,9 @@ class CommentType extends AbstractType
     {
         $builder
             ->add('body', new TextareaType(),array(
-                'attr'=>array('class'=>'form-control','rows'=>'8',),
+                'attr'=>array('class'=>'form-control','rows'=>'6',),
             ))
-            ->add('submit',new SubmitType(),array(
+            ->add('submit',new SubmitType(),array('attr'=>array('class'=>'btn btn-primary'),
                 'label'=>'Create comment'
             ));
     }

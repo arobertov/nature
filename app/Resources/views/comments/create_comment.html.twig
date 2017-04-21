@@ -1,17 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-<div class="well">
-    <form class="form-horizontal" action="{{ path('comment_create',{id:id}) }}" method="POST">
-        <fieldset>
-            <legend>New Comment</legend>
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            {{ form_end(form) }}
-
-        </fieldset>
-    </form>
-</div>
 
 {% endblock %}
 
