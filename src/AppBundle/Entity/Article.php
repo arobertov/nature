@@ -2,7 +2,8 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\AppBundle;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -63,7 +64,6 @@ class Article
      * @ORM\JoinColumn(name="authorId", referencedColumnName="id")
      */
     private $author;
-
 
     public function __construct()
     {
@@ -210,5 +210,13 @@ class Article
     public function setSummary()
     {
         $this->summary = substr($this->getContent(),0,strlen($this->getContent())/2)."...";
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

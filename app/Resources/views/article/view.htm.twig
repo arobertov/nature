@@ -37,9 +37,9 @@
     {% endif %}
 
     {% block comment %}
-    {% include 'article/comment.html.twig' %}
-    {% endblock %}
-
+        {{ render(controller('AppBundle:Comment:viewComment',{'id':article.id})) }}
+        {{ render(controller('AppBundle:Comment:createComment',{'id':article.id})) }}
+{% endblock %}
 {% endblock %}
 
 

@@ -31,6 +31,11 @@ ul,label{
 float:left;
 margin-right:2em;
 }
+.time {
+  color: #ccc;
+  margin: 0 0 10px;
+  font-family: "Georgia";
+}
 .top-menu{
 float:left;
 width:60%;

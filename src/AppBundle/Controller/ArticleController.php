@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 class ArticleController extends Controller
 {
 
-    public function recentArticlesAction($max = 3)
+    public function recentArticlesAction($max)
     {
         $articles = $this->getDoctrine()->getRepository(Article::class)->findBy([],['id'=>'DESC'],$max);
 

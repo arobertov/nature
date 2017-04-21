@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    {% for comment in comments %}
+        <p>{{ comment.body }} // {{ comment.author }} // {{ comment.articleId }}</p>
+    {% endfor %}
+
+{% endblock %}
+
