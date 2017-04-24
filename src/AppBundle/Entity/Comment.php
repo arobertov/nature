@@ -48,6 +48,14 @@ class Comment
      */
     private $articleId;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="article_title",type="string",length=255)
+     */
+
+    private $articleTitle;
+
 
     /**
      * Get id
@@ -141,7 +149,7 @@ class Comment
     /**
      * @return int
      */
-    public function getArticleId(): int
+    public function getArticleId()
     {
         return $this->articleId;
     }
@@ -150,10 +158,31 @@ class Comment
      * @param int $articleId
      * @return Comment
      */
-    public function setArticleId(int $articleId)
+    public function setArticleId(int $articleId )
     {
         $this->articleId = $articleId;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getArticleTitle()
+    {
+        return $this->articleTitle;
+    }
+
+    /**
+     * @param $articleTitle
+     *
+     * @return Comment
+     */
+    public function setArticleTitle($articleTitle )
+    {
+        $this->articleTitle = $articleTitle;
+
+        return $this;
+    }
+
 }
 

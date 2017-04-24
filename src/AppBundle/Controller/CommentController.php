@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Article;
 use AppBundle\Entity\Comment;
 use AppBundle\Form\CommentType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -21,11 +22,11 @@ class CommentController extends Controller
         $comment = new Comment();
         $form = $this->createForm(new CommentType(), $comment);
         $form->handleRequest($request);
-        $comment->setArticleId($id);
         if ($form->isSubmitted() && $form->isValid()) {
-
+            $art = $this->getDoctrine()->getRepository(Article::class)->find($id);
             $comment->setAuthor($this->getUser());
-
+            $comment->setArticleTitle($art->getTitle());
+            $comment->setArticleId($id);
             $user= $comment->getAuthor();
             if($user==null)
                 $comment->setAuthor('Anonymous');
@@ -139,9 +140,11 @@ class CommentController extends Controller
         return $this->render(':article:comment_form.html.twig',array('id'=>$id,'form' => $form->createView()));
     }
 
-    public function recentCommentAction($max=3)
+    public function recentCommentAction()
     {
-        $recent_comments = $this->getDoctrine()->getRepository(Comment::class)->findBy([],['id'=>'DESC'],$max);
+        $recent_comments = $this->getDoctrine()->getRepository(Comment::class)->findBy([],['id'=>'DESC'],4);
+
+
         return $this->render('recent_comments.html.twig',array('comments'=>$recent_comments));
     }
 }

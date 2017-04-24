@@ -65,10 +65,12 @@ class Article
      */
     private $author;
 
+
     public function __construct()
     {
         $this->dateAdded = new \DateTime('now');
     }
+
 
     /**
      * @param \AppBundle\Entity\User  $author
@@ -210,13 +212,5 @@ class Article
     public function setSummary()
     {
         $this->summary = substr($this->getContent(),0,strlen($this->getContent())/2)."...";
-    }
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getComments()
-    {
-        return $this->comments;
     }
 }

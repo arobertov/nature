@@ -1,3 +1,6 @@
 {% for comment in comments %}
-    <li><a href="{{ path('article_view',{'id':comment.articleId}) }}">{{ comment.author }}</a> on <a href="{{ path('article_view',{'id':comment.articleId}) }}">{{ comment.articleId }}</a></li>
+    <li>
+        <a href="{{ path('article_view',{'id':comment.articleId}) }}">{{ comment.author }}</a> on
+        <a href="{{ path('article_view',{'id':comment.articleId}) }}">{{ comment.articleTitle }}</a>
+    </li>
 {% endfor %}

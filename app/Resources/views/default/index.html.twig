@@ -5,7 +5,10 @@
         <div class="content-grid-info">
             <img src="{{ asset('images/post1.jpg') }}" alt=""/>
             <div class="post-info">
-                <h4><a href="{{ path('article_view', {'id': article.id}) }}">{{ article.title }}</a> {{ article.date|date("d/m/Y H:i") }}  // 27 Comments / Author: {{ article.author }}</h4>
+                <h4>
+                    <a href="{{ path('article_view', {'id': article.id}) }}">{{ article.title }}</a>
+                    {{ article.date|date("d/m/Y H:i") }}  // 27 Comments / Author: {{ article.author }}
+                </h4>
                 <p>{{ article.summary }}</p>
                 <a href="{{ path('article_view', {'id': article.id}) }}"><span></span>READ MORE</a>
             </div>
