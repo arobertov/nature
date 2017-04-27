@@ -78,4 +78,28 @@ class User extends BaseUser
 
         $this->articles = new ArrayCollection();
     }
+
+    /**
+     * Add article
+     *
+     * @param \AppBundle\Entity\Article $article
+     *
+     * @return User
+     */
+    public function addArticle(\AppBundle\Entity\Article $article)
+    {
+        $this->articles[] = $article;
+
+        return $this;
+    }
+
+    /**
+     * Remove article
+     *
+     * @param \AppBundle\Entity\Article $article
+     */
+    public function removeArticle(\AppBundle\Entity\Article $article)
+    {
+        $this->articles->removeElement($article);
+    }
 }

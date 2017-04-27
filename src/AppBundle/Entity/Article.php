@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Article
  *
  * @ORM\Table(name="articles")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\ArticleRepository")
  */
 class Article
 {
@@ -248,4 +248,14 @@ class Article
             }
     }
 
+
+    /**
+     * Get dateAdded
+     *
+     * @return \DateTime
+     */
+    public function getDateAdded()
+    {
+        return $this->dateAdded;
+    }
 }
