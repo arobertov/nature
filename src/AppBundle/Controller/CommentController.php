@@ -147,4 +147,22 @@ class CommentController extends Controller
 
         return $this->render('recent_comments.html.twig',array('comments'=>$recent_comments));
     }
+
+    public function countCommentAction($articleId)
+    {
+        $repo = $this   ->getDoctrine()
+            ->getManager()
+            ->getRepository('AppBundle:Comment');
+
+        $qb = $repo->createQueryBuilder('a');
+        $qb->select('COUNT(a)');
+        $qb->where('a.articleId = :articleId');
+        $qb->setParameter('articleId', $articleId);
+
+        $count = $qb->getQuery()->getSingleScalarResult();
+        return $this->render('comments/count.html.twig',['count_comment'=>$count]);
+
+    }
+
+
 }

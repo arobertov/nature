@@ -38,6 +38,13 @@ class Article
     private $content;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="category",type="text")
+     */
+    private $category;
+
+    /**
      *
      * @var string
      */
@@ -64,7 +71,6 @@ class Article
      * @ORM\JoinColumn(name="authorId", referencedColumnName="id")
      */
     private $author;
-
 
     public function __construct()
     {
@@ -170,6 +176,26 @@ class Article
 
 
     /**
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param string $category
+     *
+     * @return Article
+     */
+    public function setCategory(string $category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
      * Set dateAdded
      *
      * @param \DateTime $dateAdded
@@ -211,6 +237,15 @@ class Article
      */
     public function setSummary()
     {
-        $this->summary = substr($this->getContent(),0,strlen($this->getContent())/2)."...";
+        $content = $this->getContent();
+        if(strlen($content)>50)
+        {
+            $this->summary = substr($this->getContent(),0,285)." .....";
+        }
+        else
+            {
+                $this->summary=$content." .....";
+            }
     }
+
 }

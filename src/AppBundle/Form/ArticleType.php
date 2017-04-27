@@ -17,6 +17,9 @@ class ArticleType extends AbstractType
             ->add('title',new TextType(),array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'Post Title')
             ))
+            ->add('category',new TextType(),array(
+                'attr'=>array('class'=>'form-control','placeholder'=>'Category article')
+            ))
             ->add('content', new TextareaType(),array(
                 'attr'=>array('class'=>'form-control','rows'=>'8',),
                 ));
