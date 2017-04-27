@@ -20,4 +20,24 @@ class DefaultController extends Controller
 
         return $this->render('default/index.html.twig', ['articles' => $articles]);
     }
+
+    /**
+     * @Route("/about",name="view_about")
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function aboutAction()
+    {
+        return $this->render(':default:about.html.twig');
+    }
+
+    /**
+     * @Route("/contact",name="view_contact")
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function contactAction()
+    {
+        return $this->render(':default:contact.html.twig');
+    }
 }

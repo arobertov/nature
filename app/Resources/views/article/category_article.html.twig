@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    {%  for cat_article in cat %}
+        <div class="content-grid-info">
+           <div class="post-info">
+              <h4><a href="{{ path('article_view',{'id':cat_article.id}) }}" >{{ cat_article.title }}</a></h4>
+              <p>
+                  {{ cat_article.summary }}
+              </p>
+               <p><a href="{{ path('article_view',{'id':cat_article.id}) }}">
+                      Read More >>>
+                   </a>
+               </p>
+               <p>Author : {{ cat_article.author }}</p>
+
+           </div>
+        </div>
+        {% endfor %}
+
+{% endblock %}

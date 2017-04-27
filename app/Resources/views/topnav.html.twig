@@ -7,8 +7,8 @@
     </div>
     <ul class="active">
         <li ><a href="{{ path('homepage') }}">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="{{ path('view_about') }}">ABOUT</a></li>
+        <li><a href="{{ path('view_contact') }}">CONTACT</a></li>
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <li>
                 <a href="{{ path('article_create') }}">CREATE ARTICLE</a>

@@ -60,6 +60,19 @@ class ArticleController extends Controller
     }
 
     /**
+     * @param $cat
+     * @Route("/category/{cat}",name="article_category")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function previewArticleByCategory($cat)
+    {
+        $articleCategory= $this->getDoctrine()->getRepository(Article::class)->findBy(['category'=>$cat]);
+
+        return $this->render('article/category_article.html.twig',['cat'=>$articleCategory]);
+    }
+
+
+    /**
      * @param $authorId
      * @Route("/article/author_preview/{authorId}", name="author_preview")
      *
@@ -163,4 +176,4 @@ class ArticleController extends Controller
                 'form'=> $form->createView()) );
     }
 
-    }
+}

@@ -1,6 +1,6 @@
 {% for category in categories %}
 <li>
-    <a href="#">{{ category.category }}</a>
+    <a href="{{ path('article_category',{'cat':category.category}) }}">{{ category.category }}</a>
 </li>
     {% else %}
         <p>No categories!</p>
