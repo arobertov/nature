@@ -2,8 +2,8 @@
 
 {% block content %}
     {% for article in articles %}
+        <img src="{{ asset('upload/article_image/'~article.path) }}" class="img-fluid" alt="Responsive image"/>
         <div class="content-grid-info">
-            <img src="{{ asset('images/post1.jpg') }}" alt=""/>
             <div class="post-info">
                 <h4>
                     <a href="{{ path('article_view', {'id': article.id}) }}">{{ article.title }}</a>
@@ -14,6 +14,8 @@
                 <a href="{{ path('article_view', {'id': article.id}) }}"><span></span>READ MORE</a>
             </div>
         </div>
+        {% else %}
+        <h2>No preview article here! Be first to create :<a href="{{ path('article_create') }}">New article</a></h2>
     {% endfor %}
 {% endblock %}
 

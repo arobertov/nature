@@ -8,7 +8,7 @@
     {% endfor %}
 
     <div class="single-grid">
-        <img src="{{ asset('images/post1.jpg') }}" alt=""/>
+        <img src="{{ asset('upload/article_image/'~article.path) }}" alt=""/>
         <h3>{{ article.title }}</h3>
         <p>{{ article.content }}</p>
     </div>

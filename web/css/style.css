@@ -31,14 +31,9 @@ ul,label{
 float:left;
 margin-right:2em;
 }
-.time {
-  color: #ccc;
-  margin: 0 0 10px;
-  font-family: "Georgia";
-}
 .top-menu{
 float:left;
-width:60%;
+width:40%;
 margin-top:3.5em;
 }
 .search {
@@ -517,7 +512,8 @@ width: 100%;
 padding:0;
 }
 .content-grid-info img{
-width:100%;
+  height: 100;
+  width: 100;
 }
 .content-right {
 width: 100%;

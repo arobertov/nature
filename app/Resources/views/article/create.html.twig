@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block content %}
     <div class="well">
-        <form class="form-horizontal" action="{{ path('article_create') }}" method="POST">
+        <form class="form-horizontal" action="{{ path('article_create') }}" {{ form_enctype(form) }} method="POST">
             <fieldset>
                 <legend>New Post</legend>
 
@@ -16,6 +16,13 @@
                     <label class="col-sm-4 control-label" for="article_title">Post Category</label>
                     <div class="col-sm-6 ">
                         {{ form_widget(form.category) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="article_title">Post Image</label>
+                    <div class="col-sm-6 ">
+                        {{ form_row(form.file) }}
                     </div>
                 </div>
 

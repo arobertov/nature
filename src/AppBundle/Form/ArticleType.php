@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,6 +17,9 @@ class ArticleType extends AbstractType
         $builder
             ->add('title',new TextType(),array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'Post Title')
+            ))
+            ->add('file',new FileType(),array(
+                'attr'=>array('class'=>'form-control')
             ))
             ->add('category',new TextType(),array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'Category article')
