@@ -2,9 +2,11 @@
 
 {% block content %}
     {% for article in articles %}
-        <img src="{{ asset('upload/article_image/'~article.path) }}" class="img-fluid" alt="Responsive image"/>
-        <div class="content-grid-info">
-            <div class="post-info">
+<div class="single-grid">
+        <img src="{{ asset('upload/article_image/'~article.path) }}"  alt=""/>
+</div>
+            <div class="content-grid-info">
+                <div class="post-info">
                 <h4>
                     <a href="{{ path('article_view', {'id': article.id}) }}">{{ article.title }}</a>
                     {{ article.date|date("d/m/Y H:i") }}  //
