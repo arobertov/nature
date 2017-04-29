@@ -3,4 +3,6 @@
         <a href="{{ path('article_view',{'id':comment.articleId}) }}">{{ comment.author }}</a> on
         <a href="{{ path('article_view',{'id':comment.articleId}) }}">{{ comment.articleTitle }}</a>
     </li>
+    {% else %}
+        <p>No comments here !!!</p>
 {% endfor %}
