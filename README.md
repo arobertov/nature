@@ -1,9 +1,13 @@
 .checkout
 =========
+Simle Blog Sisem CMS!
+.User registration.
+.Create edit and read article.
+.Leave a comment.
+
 Requirements
 PHP 5.3.6+ 
-curl
-mcrypt
+
 gd
 pdo_mysql or pdo_sqlite
 MySQL 5.2+
