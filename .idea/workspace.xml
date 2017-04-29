@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="319dd1ac-487c-4c01-9acd-0634a9888731" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/default/admin_panel.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/navbar.html.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/Sidebar/category.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/sidebar/category.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/FosUserBundle/views/Profile/show_content.html.twig" afterPath="$PROJECT_DIR$/app/Resources/FosUserBundle/views/Profile/show_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/article/comment_form.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/article/comment_form.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/topnav.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/topnav.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ArticleController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ArticleController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CommentController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CommentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SideBarController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SideBarController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Article.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Article.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -536,7 +522,7 @@
       <workItem from="1493099017398" duration="634000" />
       <workItem from="1493105654192" duration="63665000" />
       <workItem from="1493410003238" duration="27673000" />
-      <workItem from="1493491688560" duration="7717000" />
+      <workItem from="1493491688560" duration="7751000" />
     </task>
     <task id="LOCAL-00001" summary="Add all changes and works in blog nature project">
       <created>1492604276825</created>
@@ -636,11 +622,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493455490027</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add Admin panel">
+      <created>1493499680408</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1493499680408</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263204000" />
+    <option name="totallyTimeSpent" value="263238000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -714,7 +707,8 @@
     <MESSAGE value="Sidebar preview list categories." />
     <MESSAGE value="Add About and Contact page." />
     <MESSAGE value="Add Upload article image functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Upload article image functionality" />
+    <MESSAGE value="Add Admin panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Admin panel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -873,6 +867,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="21" column="53" lean-forward="false" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -898,6 +893,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2157">
           <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+          <folding>
+            <element signature="e#36#68#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -975,6 +973,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
