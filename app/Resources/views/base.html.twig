@@ -58,7 +58,7 @@
                 </div>
             </div>
             {% block sidebar %}
-                {{ render(controller('AppBundle:Article:recentArticles',{ 'max': 3 })) }}
+                {{ render(controller('AppBundle:SideBar:recentArticles',{ 'max': 3 })) }}
             {% endblock %}
         </div>
     </div>

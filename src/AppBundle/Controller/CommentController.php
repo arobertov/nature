@@ -40,6 +40,10 @@ class CommentController extends Controller
             return $this->redirectToRoute('article_view',array('id'=>$id));
         }
 
+        $this->addFlash(
+            'notice',
+            'Your comment unable added!'
+        );
         return $this->render(':article:comment_form.html.twig',array('id'=>$id,'form' => $form->createView()));
     }
 

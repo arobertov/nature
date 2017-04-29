@@ -13,14 +13,9 @@ use Symfony\Component\HttpFoundation\Request;
 class ArticleController extends Controller
 {
 
-    public function recentArticlesAction($max)
-    {
-        $articles = $this->getDoctrine()->getRepository(Article::class)->findBy([],['id'=>'DESC'],$max);
-
-        return $this->render('sidebar.html.twig', array('articles' => $articles));
-    }
-
     /**
+     * Create article controller
+     *
      * @param Request $request
      * @Security("is_granted('IS_AUTHENTICATED_REMEMBERED')")
      * @Route("/article/create",name="article_create")
@@ -51,6 +46,8 @@ class ArticleController extends Controller
     }
 
     /**
+     * Preview single article
+     *
      * @param $id
      * @Route("/article/{id}",name="article_view")
      * @return \Symfony\Component\HttpFoundation\Response
@@ -62,6 +59,8 @@ class ArticleController extends Controller
     }
 
     /**
+     * Preview articles by category
+     *
      * @param $cat
      * @Route("/category/{cat}",name="article_category")
      * @return \Symfony\Component\HttpFoundation\Response
@@ -75,6 +74,8 @@ class ArticleController extends Controller
 
 
     /**
+     * Preview articles by author
+     *
      * @param $authorId
      * @Route("/article/author_preview/{authorId}", name="author_preview")
      *
@@ -94,6 +95,8 @@ class ArticleController extends Controller
     }
 
     /**
+     * Edit article
+     *
      * @Route("/article/edit/{id}",name="article_edit")
      * @Security("is_granted('IS_AUTHENTICATED_REMEMBERED')")
      * @param $id
@@ -139,6 +142,8 @@ class ArticleController extends Controller
     }
 
     /**
+     * Delete article
+     *
      * @Route("/article/delete/{id}",name="article_delete")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      *

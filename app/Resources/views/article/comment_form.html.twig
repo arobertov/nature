@@ -1,4 +1,8 @@
-
+{% for flash_message in app.session.flashBag.get('notice') %}
+    <div class="alert alert-danger">
+        <strong>Bug!</strong> {{ flash_message }}
+    </div>
+{% endfor %}
 <div class="well">
     <form action="{{ path('create_comment',{id:id}) }}" method="post">
         <fieldset>

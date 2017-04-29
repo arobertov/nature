@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Article;
+use AppBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -39,5 +40,17 @@ class DefaultController extends Controller
     public function contactAction()
     {
         return $this->render(':default:contact.html.twig');
+    }
+
+
+    /**
+     * @Route("/admin",name="admin_panel")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function adminPanelAction()
+    {
+        $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+
+        return $this->render(':default:admin_panel.html.twig',['users'=>$users]);
     }
 }

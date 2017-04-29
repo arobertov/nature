@@ -7,6 +7,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class SideBarController extends Controller
 {
+
+    public function recentArticlesAction($max)
+    {
+        $articles = $this->getDoctrine()->getRepository(Article::class)->findBy([],['id'=>'DESC'],$max);
+
+        return $this->render('sidebar.html.twig', array('articles' => $articles));
+    }
+
     public function categoryViewAction()
     {
         $repo = $this->getDoctrine()
