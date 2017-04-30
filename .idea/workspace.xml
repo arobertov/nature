@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="319dd1ac-487c-4c01-9acd-0634a9888731" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/comments/comment_by_author.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/article/comment.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/article/comment.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CommentController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CommentController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/app/Resources/views/comments/comment_by_author.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
@@ -599,7 +596,7 @@
       <workItem from="1493410003238" duration="27673000" />
       <workItem from="1493491688560" duration="8257000" />
       <workItem from="1493503672634" duration="1165000" />
-      <workItem from="1493539306012" duration="2048000" />
+      <workItem from="1493539306012" duration="2093000" />
     </task>
     <task id="LOCAL-00001" summary="Add all changes and works in blog nature project">
       <created>1492604276825</created>
@@ -713,11 +710,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493499693429</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="List comment by author !">
+      <created>1493541418044</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1493541418044</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266957000" />
+    <option name="totallyTimeSpent" value="267002000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -792,7 +796,8 @@
     <MESSAGE value="Add About and Contact page." />
     <MESSAGE value="Add Upload article image functionality" />
     <MESSAGE value="Add Admin panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Admin panel" />
+    <MESSAGE value="List comment by author !" />
+    <option name="LAST_COMMIT_MESSAGE" value="List comment by author !" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -980,6 +985,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#69#0#PHP" expanded="false" />
+            <marker date="1493457697478" expanded="true" signature="423:876" ph="{...}" />
+            <marker date="1493457697478" expanded="true" signature="464:874" ph="{...}" />
+            <marker date="1493457697478" expanded="true" signature="563:582" ph="..." />
+            <marker date="1493457697478" expanded="false" signature="564:581" ph="Article" />
+            <marker date="1493457697478" expanded="false" signature="807:834" ph=":Sidebar:category" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1008,6 +1021,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="937">
           <caret line="144" column="21" lean-forward="false" selection-start-line="144" selection-start-column="21" selection-end-line="144" selection-end-column="21" />
+          <folding>
+            <element signature="e#40#69#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1051,6 +1067,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="51" column="14" lean-forward="false" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1123,7 +1140,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/comments/comment_by_author.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
