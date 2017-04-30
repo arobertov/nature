@@ -10,7 +10,7 @@
     {% for comment in comments %}
  <ul class="comment-list">
         <div class="col-sm-9">
-             <h5 class="post-author_head">Commented by : <a href="#" title="Posts by admin" rel="author"> {{ comment.author }} </a></h5>
+             <h5 class="post-author_head">Commented by : <a href="#" title="Posts" rel="author"> {{ comment.author }} </a></h5>
         </div>
         <div class="col-sm-3">
             {% if app.getUser() and (app.getUser().isAuthorComment(comment) or app.getUser().isAdmin())  %}
@@ -27,7 +27,7 @@
         </div>
         <div class="desc">
             <p>
-                View all comments by: <a href="#" title="Comment" rel="author">{{ comment.author }}</a>
+                View all comments by: <a href="{{ path('author_comment',{'author':comment.author}) }}" title="Comment" rel="author">{{ comment.author }}</a>
             </p>
         </div>
     </li>

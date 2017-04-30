@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    {% for comment in comments %}
+        <ul class="comment-list">
+            <div class="col-sm-9">
+                <h5 class="post-author_head">Commented by : <a href="#" title="Posts" rel="author"> {{ comment.author }} </a></h5>
+            </div>
+            <div class="col-sm-3">
+                {% if app.getUser() and (app.getUser().isAuthorComment(comment) or app.getUser().isAdmin())  %}
+                    <h5 class="post-author_head">
+                        <a href="{{ path('edit_comment',{'id':comment.id,'articleId':comment.articleId}) }}"> edit </a><span>|</span>
+                        <a href="{{ path('delete_comment',{'id':comment.id,'articleId':comment.articleId}) }}"> delete </a>
+                    </h5>
+                {% endif %}
+            </div>
+            <p class="time">{{ comment.createdAt|date("d/m/Y H:i") }}</p>
+            <li>
+                <div class="desc">
+                    <p>{{ comment.body }}</p>
+                </div>
+                <div class="desc">
+
+                </div>
+            </li>
+        </ul>
+
+    {% endfor %}
+
+{% endblock %}

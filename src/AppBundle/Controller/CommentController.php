@@ -168,4 +168,15 @@ class CommentController extends Controller
 
     }
 
+    /**
+     * @Route("/comment/{author}",name="author_comment")
+     * @param $author
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function viewByAuthorAction($author)
+    {
+        $comments = $this->getDoctrine()->getRepository(Comment::class)->findBy(['author'=>$author]);
+
+        return $this->render('comments/comment_by_author.html.twig',['comments'=>$comments]);
+    }
 }
