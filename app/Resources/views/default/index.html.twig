@@ -11,7 +11,7 @@
                     <a href="{{ path('article_view', {'id': article.id}) }}">{{ article.title }}</a>
                     {{ article.date|date("d/m/Y H:i") }}  /
                     {{ render(controller('AppBundle:Comment:countComment',{'articleId':article.id})) }}
-                    Comments / Author: {{ article.author }}
+                    Comments / Author: {{ article.author.name }}
                     / Category: {{ article.category }}
                 </h4>
                 <p>{{ article.summary}}</p>
@@ -19,7 +19,10 @@
             </div>
         </div>
         {% else %}
-        <h2>No preview article here! Be first to create :<a href="{{ path('article_create') }}">New article</a></h2>
+        <h2>
+            No preview article here! Be first to create :
+            <a href="{{ path('article_create') }}"> New article </a>
+        </h2>
     {% endfor %}
 {% endblock %}
 

@@ -7,6 +7,10 @@
             <a href="{{ path('fos_user_profile_edit') }}" title="Edit profile">{{ user.username }}</a> </p>
         </div>
         <div class="clear-fix">
+            <p> Full name :
+                <a href="{{ path('fos_user_profile_edit') }}" title="Edit profile">{{ user.name }}</a> </p>
+        </div>
+        <div class="clear-fix">
             <p> {{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}:
                 <a href="{{ path('fos_user_profile_edit') }}" title="Edit profile" rel="author"> {{ user.email }}</a></p>
         </div>

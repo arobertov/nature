@@ -343,4 +343,28 @@ class Article
         // clean up the file property as you won't need it anymore
         $this->file = null;
     }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     *
+     * @return Article
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
 }

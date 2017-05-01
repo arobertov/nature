@@ -4,6 +4,8 @@
         <ul>
             {% for article in articles %}
             <li><a href="{{ path('article_view', {'id': article.id}) }}">{{ article.title }}</a> </li>
+            {% else %}
+                <p>No publish post !</p>
             {% endfor %}
         </ul>
     </div>

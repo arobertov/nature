@@ -85,6 +85,8 @@ fos_user:
             address:        noreply@example.com
             sender_name:    Demo App
     registration:
+            form:
+               type: app_user_registration
             confirmation:
                 enabled: false
                 from_email:
